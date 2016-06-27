@@ -1,0 +1,30 @@
+{
+  "name": "angularfire-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thisisbrad/angularfire-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thisisbrad/angularfire-starter/issues"
+  },
+  "homepage": "https://github.com/thisisbrad/angularfire-starter#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-nodemon": "^2.1.0",
+    "morgan": "^1.7.0"
+  }
+}

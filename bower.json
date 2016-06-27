@@ -1,0 +1,21 @@
+{
+  "name": "angularfire-starter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Brad Beltowski <bbelowski@fullsail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/thisisbrad/angularfire-starter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularfire": "^2.0.1",
+    "angular-route": "^1.5.7"
+  }
+}
