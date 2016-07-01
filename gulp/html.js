@@ -5,6 +5,6 @@ gulp.task('html:build', function () {
 	.pipe(gulp.dest('./public/views/'))
 })
 
-gulp.task('html:watch', function () {
+gulp.task('html:watch', ['html:build'] function () {
 	gulp.watch('./templates/**/*.html', ['html:build'])
 })
