@@ -15,7 +15,7 @@ gulp.task('js:build', function () {
 	.pipe(gulp.dest('./public/'))
 })
 
-gulp.task('js:watch', ['js:build'] function () {
+gulp.task('js:watch', ['js:build'], function () {
 	gulp.watch('./ng/**/*.js', ['js:build'])
 })
 
