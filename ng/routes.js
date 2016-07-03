@@ -1,5 +1,5 @@
 angular.module('fireApp')
-.config(function($locationProvider,$routeProvider) {
+.config(function($locationProvider, $routeProvider) {
 	$locationProvider.html5Mode(true)
 	$routeProvider
 	.when('/', {

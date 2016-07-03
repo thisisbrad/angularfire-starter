@@ -1,0 +1,12 @@
+.edit-post {
+	background-color: #3498db;
+}
+
+.remove-post {
+	background-color: #e74c3c;
+}
+
+body {
+	background-image : url("../img/geometry.png");
+	background-repeat: repeat;
+}
