@@ -1,7 +1,8 @@
 <div class="col-md-6 col-md-offset-3">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">Register New User</h3>
+			<h3 class="panel-title" ng-hide="alreadyRegistered">Register New User</h3>
+			<h3 class="panel-title" ng-show="alreadyRegistered">Login User</h3>
 		</div>
 		<div class="panel-body">
 			<form ng-submit="registerUserByEmail()" class="inline-form">
@@ -21,12 +22,16 @@
 						>
 					</label>
 				</div>
-				<button type="submit" class="btn btn-primary">Register User</button>
-				<!-- <a href="#" ng-click="alreadyRegistered = true">Already a member?</a> -->
+
+				<span ng-hide="alreadyRegistered">
+					<button type="submit" class="btn btn-primary">Register User</button>
+					<a href="#" ng-click="alreadyRegistered = true" class="btn btn-link">Already a member?</a>
+				</span>
+				<span ng-show="alreadyRegistered">
+					<a ng-click="loginUser()" class="btn btn-primary">Login User</a>
+					<a href="#" ng-click="alreadyRegistered = false" class="btn btn-link">Not a member?</a>
+				</span>
 			</form>
-			<!-- <p ng-show="alreadyRegistered">
-  			{{ currentUser.email }} | <a href="#" ng-click="authObj.$signOut()">Sign out</a>
-			</p> -->
 		</div>
 	</div>
 
@@ -34,4 +39,6 @@
 	  <button type="button" ng-click="error = null" class="close">&times;</button>
 	  <strong>Error:</strong> {{error}}.
 	</div>
+
+	<pre>{{currentUser | json}}</pre>
 </div>
