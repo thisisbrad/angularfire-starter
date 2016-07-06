@@ -4,7 +4,7 @@ angular.module('fireApp', ['ngRoute', 'firebase'])
     apiKey: "AIzaSyDrVZ7F8K6qXIdPGdO8mQQRZad5VBcnCXo",               // Your Firebase API key
     authDomain: "fireapp-3c92b.firebaseapp.com",       // Your Firebase Auth domain ("*.firebaseapp.com")
     databaseURL: "https://fireapp-3c92b.firebaseio.com",     // Your Firebase Database URL ("https://*.firebaseio.com")
-    storageBucket: ""  // Your Firebase Storage bucket ("*.appspot.com")
+    storageBucket: "fireapp-3c92b.appspot.com"  // Your Firebase Storage bucket ("*.appspot.com")
   };
   firebase.initializeApp(config);
 });
