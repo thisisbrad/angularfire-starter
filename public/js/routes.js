@@ -8,7 +8,7 @@ angular.module('fireApp')
 	})
 	.when('/sign-in', {
 		templateUrl: '/views/sign-in.html',
-		controller: 'HomeCtrl'
+		controller: 'SignInCtrl'
 	})
 	.otherwise({
 		redirectTo: '/'

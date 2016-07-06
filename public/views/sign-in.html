@@ -1,1 +1,37 @@
-<h2>sign in page</h2>
+<div class="col-md-6 col-md-offset-3">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Register New User</h3>
+		</div>
+		<div class="panel-body">
+			<form ng-submit="registerUserByEmail()" class="inline-form">
+				<div class="form-group">
+					<label for=""> Email
+						<input type="email" class="form-control" 
+						ng-model="newUser.email" 
+						placeholder="email@domain.com" 
+						>
+					</label>
+				</div>
+				<div class="form-group">
+					<label for="" class="control-label"> Password
+						<input type="password" class="form-control"
+						ng-model="newUser.password"
+						placeholder="Enter Password" 
+						>
+					</label>
+				</div>
+				<button type="submit" class="btn btn-primary">Register User</button>
+				<!-- <a href="#" ng-click="alreadyRegistered = true">Already a member?</a> -->
+			</form>
+			<!-- <p ng-show="alreadyRegistered">
+  			{{ currentUser.email }} | <a href="#" ng-click="authObj.$signOut()">Sign out</a>
+			</p> -->
+		</div>
+	</div>
+
+	<div class="alert alert-dismissible alert-danger" ng-show="error">
+	  <button type="button" ng-click="error = null" class="close">&times;</button>
+	  <strong>Error:</strong> {{error}}.
+	</div>
+</div>

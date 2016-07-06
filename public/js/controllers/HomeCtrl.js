@@ -4,14 +4,14 @@ angular.module('fireApp')
 	var postsRef = ref.child("posts")
   var posts = $firebaseArray(postsRef)
 
-  // add an item
+  // adds a post
   $scope.submitPost = function () {
   	posts.$add($scope.newPost).then(
   		console.log("added to Firebase")
   	)
   }
 
-  // remove an item
+  // removes the post
   $scope.removePost = function (post) {
 		posts.$remove(post).then(function(ref) {
 		  ref.key === post.$id // true
@@ -27,10 +27,10 @@ angular.module('fireApp')
 
   //updates the post value in Firebase
   $scope.updatePost = function () {
-  	var node = posts.$indexFor($scope.newPost.$id)
-  	posts[node] = $scope.newPost
-		posts.$save(node).then(function(ref) {
-		  ref.key === posts[node].$id // true
+  	var index = posts.$indexFor($scope.newPost.$id)
+  	posts[index] = $scope.newPost
+		posts.$save(index).then(function(ref) {
+		  ref.key === posts[index].$id // true
 		  $scope.editing = !$scope.editing
 		  $scope.newPost = {}
 		})

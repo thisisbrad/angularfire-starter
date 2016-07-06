@@ -21,6 +21,7 @@
 	<script src="/js/module.js"></script>
 	<script src="/js/routes.js"></script>
 	<script src="/js/controllers/HomeCtrl.js"></script>
+	<script src="/js/controllers/SignInCtrl.js"></script>
 	<!-- endinject -->
 
 	<!--[if IE]>
@@ -28,10 +29,26 @@
 	<![endif]-->
 </head>
 <body>
-    <!-- This is a BOSS HTML5 template! -->
-    <h1>hello world!</h1>
-    <div class="container">
-    	<ng-view></ng-view>
-    </div>
+	<nav class="navbar navbar-default" ng-controller="SignInCtrl">
+	  <div class="container-fluid">
+	    <div class="collapse navbar-collapse">
+	      <a class="navbar-brand" href="/">Home</a>
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">Link</a></li>
+	        <li><a href="#">Link</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li ng-hide="currentUser"><a href="/sign-in">Sign In</a></li>
+	        <li ng-show="currentUser">
+  					{{ currentUser.email }} | <a href="#" ng-click="authObj.$signOut()">Sign out</a>
+					</li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+  <div class="container">
+  	<ng-view></ng-view>
+  </div>
 </body>
 </html>
