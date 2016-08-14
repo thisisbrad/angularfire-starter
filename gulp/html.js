@@ -8,3 +8,5 @@ gulp.task('html:build', function () {
 gulp.task('html:watch', ['html:build'], function () {
 	gulp.watch('./templates/**/*.html', ['html:build'])
 })
+
+
