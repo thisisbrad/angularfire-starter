@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <a class="navbar-brand" href="/">Home</a>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/dashboard">User Dashboard</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="currentUser"><a href="/sign-in">Sign In</a></li>
+        <li ng-show="currentUser">
+				{{ currentUser.email }} | <a href="#" ng-click="authObj.$signOut()">Sign out</a>
+		    </li>
+      </ul>
+    </div>
+  </div>
+</nav>

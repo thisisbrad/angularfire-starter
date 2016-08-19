@@ -5,6 +5,15 @@ angular.module('fireApp', ['ngRoute', 'firebase'])
     authDomain: "fireapp-3c92b.firebaseapp.com",       // Your Firebase Auth domain ("*.firebaseapp.com")
     databaseURL: "https://fireapp-3c92b.firebaseio.com",     // Your Firebase Database URL ("https://*.firebaseio.com")
     storageBucket: "fireapp-3c92b.appspot.com"  // Your Firebase Storage bucket ("*.appspot.com")
-  };
-  firebase.initializeApp(config);
-});
+  }
+  firebase.initializeApp(config)
+})
+.run(["$rootScope", "$location", function($rootScope, $location) {
+  $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+    // We can catch the error thrown when the $requireSignIn promise is rejected
+    // and redirect the user back to the home page
+    if (error === "AUTH_REQUIRED") {
+      $location.path("/sign-in");
+    }
+  });
+}]);

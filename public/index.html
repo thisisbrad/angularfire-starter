@@ -20,8 +20,10 @@
 	<!-- inject:js -->
 	<script src="/js/module.js"></script>
 	<script src="/js/routes.js"></script>
+	<script src="/js/controllers/AuthCtrl.js"></script>
+	<script src="/js/controllers/DashCtrl.js"></script>
 	<script src="/js/controllers/HomeCtrl.js"></script>
-	<script src="/js/controllers/SignInCtrl.js"></script>
+	<script src="/js/services/AuthSvc.js"></script>
 	<!-- endinject -->
 
 	<!--[if IE]>
@@ -29,24 +31,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="collapse navbar-collapse">
-	      <a class="navbar-brand" href="/">Home</a>
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Link</a></li>
-	        <li><a href="#">Link</a></li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li ng-hide="currentUser"><a href="/sign-in">Sign In</a></li>
-	        <li ng-show="currentUser">
-  					{{ currentUser.email }} | <a href="#" ng-click="authObj.$signOut()">Sign out</a>
-					</li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-
+	<div ng-controller="AuthCtrl" ng-include="'views/nav.html'"></div>
   <div class="container">
   	<ng-view></ng-view>
   </div>
