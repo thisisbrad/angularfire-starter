@@ -2,13 +2,13 @@ angular.module('fireApp')
 .controller('DashCtrl', function($scope, $firebaseArray, currentAuth) {
 	var ref = firebase.database().ref()
 	var postsRef = ref.child('users/'+ currentAuth.uid + '/posts')
-  	var posts = $firebaseArray(postsRef)
+  var posts = $firebaseArray(postsRef)
 
   // adds a post
   $scope.submitPost = function () {
     posts.$add($scope.newPost).then(
-      //$scope.newPost = {}
-      console.log('Added to Firebase')
+      $scope.newPost = {}
+      // console.log('Added to Firebase')
     )
   }
 
