@@ -16,7 +16,10 @@
 	<!-- inject:js -->
 	<script src="/js/module.js"></script>
 	<script src="/js/routes.js"></script>
+	<script src="/js/controllers/AuthCtrl.js"></script>
+	<script src="/js/controllers/DashCtrl.js"></script>
 	<script src="/js/controllers/HomeCtrl.js"></script>
+	<script src="/js/services/AuthSvc.js"></script>
 	<!-- endinject -->
 
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -29,7 +32,7 @@
 </head>
 <body>
     <!-- This is a BOSS HTML5 template! -->
-    <h1>hello world!</h1>
+    <div ng-controller="AuthCtrl" ng-include="'views/nav.html'"></div>
     <ng-view></ng-view>
 </body>
 </html>

@@ -1,4 +1,11 @@
 angular.module('fireApp')
+.run(function($rootScope, $location) {
+  $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+    if (error === "AUTH_REQUIRED") {
+      $location.path("/")
+    }
+  })
+})
 .config(function($locationProvider, $routeProvider) {
 	$locationProvider.html5Mode(true)
 	$routeProvider
@@ -8,7 +15,16 @@ angular.module('fireApp')
 	})
 	.when('/sign-in', {
 		templateUrl: '/views/sign-in.html',
-		controller: 'HomeCtrl'
+		controller: 'AuthCtrl'
+	})
+	.when('/dashboard', {
+		templateUrl: '/views/dashboard.html',
+		controller: 'DashCtrl',
+		resolve: {
+	      "currentAuth": ["Auth", function(Auth) {
+	        return Auth.$requireSignIn();
+	      }]
+	    }
 	})
 	.otherwise({
 		redirectTo: '/'
